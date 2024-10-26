@@ -1,0 +1,628 @@
+:root {
+    --primary-color: #4a90e2;      /* Biru cerah */
+    --secondary-color: #2c3e50;    /* Biru gelap */
+    --accent-color-1: #0f36f9;     /* Merah */
+    --accent-color-2: #f1291a;     /* Oranye */
+    --accent-color-3: #27ae60;     /* Hijau */
+    --accent-color-4: #9b59b6;     /* Ungu */
+    --text-color: #333;            /* Abu-abu gelap */
+    --bg-color: #555657;          /* Abu-abu sangat terang*/
+    --light-gray: #e0e0e0;         /* Abu-abu terang */
+    --white: #ffffff;              /* Putih */
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Lora', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    width: fit-content;
+    /* background-color: black; */
+    background-image: url("./img/doodle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color-4));
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+main {
+    
+    padding: 7rem 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 4rem;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.proyek-item {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.proyek-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-overlay i {
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+.proyek-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.proyek-item h3 {
+    color: var(--primary-color);
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.proyek-item p {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.proyek-item .btn {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+}
+
+.proyek-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.proyek-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(74, 144, 226, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.proyek-item:hover::before {
+    left: 150%;
+    top: 150%;
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.proyek-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.proyek-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color-1);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:hover {
+    background-color: var(--accent-color-2);
+}
+
+.foto-profil {
+    width: 250px; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 250px; /* Sesuaikan ukuran sesuai kebutuhan */
+    object-fit: cover;
+    border-radius: 50%; /* Ini akan membuat foto menjadi lingkaran */
+    border: 10px solid var(--primary-color); /* Perbesar border dan gunakan warna primer */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek yang lebih menarik */
+    margin-right: 2rem; /* Beri jarak dari teks */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-profil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles for "Tentang Saya" section */
+.tentang-konten {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px; /* Add some padding for mobile devices */
+}
+
+.foto-profil {
+    width: 150px; /* Slightly smaller for mobile */
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.tentang-konten p {
+    max-width: 100%; /* Full width on mobile */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+    .foto-profil {
+        width: 200px; /* Larger size for desktop */
+        height: 200px;
+    }
+
+    .tentang-konten p {
+        max-width: 800px; /* Limited width for desktop */
+    }
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        padding-top: 2rem;
+    }
+
+    .hero-image {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.section-content h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.section-content h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: -10px;
+    left: 25%;
+    background-color: var(--accent-color-3);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.section-content h2:hover::after {
+    transform: scaleX(1);
+}
+
+.proyek-item {
+    position: relative;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-overlay i {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.proyek-item:hover .project-overlay {
+    opacity: 1;
+}
+
+#kontak {
+    background-image: url('img/contact-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--text-color); /* Mengubah warna teks menjadi warna default */
+    text-shadow: none; /* Menghapus text shadow */
+}
+
+#kontak .section-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Mengubah background menjadi putih transparan */
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Menambahkan sedikit bayangan */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--primary-color); /* Mengubah warna ikon */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd; /* Menambahkan border */
+    border-radius: 5px;
+    background-color: #fff; /* Mengubah background menjadi putih */
+    color: var(--text-color); /* Mengubah warna teks */
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form .btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+.sertifikat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.sertifikat-item {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sertifikat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sertifikat-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sertifikat-item h3 {
+    color: var(--primary-color);
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.sertifikat-item p {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.sertifikat-item .btn {
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    background-color: var(--accent-color-1);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sertifikat-item .btn:hover {
+    background-color: var(--accent-color-2);
+}
+
+@media (max-width: 768px) {
+    .sertifikat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.proyek-item:nth-child(4n+1) {
+    border-top: 3px solid var(--primary-color);
+}
+
+.proyek-item:nth-child(4n+2) {
+    border-top: 3px solid var(--accent-color-1);
+}
+
+.proyek-item:nth-child(4n+3) {
+    border-top: 3px solid var(--accent-color-2);
+}
+
+.proyek-item:nth-child(4n+4) {
+    border-top: 3px solid var(--accent-color-3);
+}
+
+.sertifikat-item:nth-child(4n+1) h3 {
+    color: var(--primary-color);
+}
+
+.sertifikat-item:nth-child(4n+2) h3 {
+    color: var(--accent-color-1);
+}
+
+.sertifikat-item:nth-child(4n+3) h3 {
+    color: var(--accent-color-2);
+}
+
+.sertifikat-item:nth-child(4n+4) h3 {
+    color: var(--accent-color-3);
+}
+
+.contact-item:nth-child(3n+1) i {
+    color: var(--accent-color-1);
+}
+
+.contact-item:nth-child(3n+2) i {
+    color: var(--accent-color-2);
+}
+
+.contact-item:nth-child(3n+3) i {
+    color: var(--accent-color-3);
+}
+
+@media (max-width: 768px) {
+    .proyek-grid {
+        grid-template-columns: 1fr;
+    }
+}
